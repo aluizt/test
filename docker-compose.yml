@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  mongo:
+    #image: docker-images.dimed.com.br:5000/mongo:latest
+    image: mongo
+    ports:
+      - '27017:27017'
+
+  mongo-express:
+    #image: docker-images.dimed.com.br:5000/mongo-express:latest
+    image: mongo-express
+    ports:
+      - '8081:8081'
+
+    depends_on:
+      - mongo
